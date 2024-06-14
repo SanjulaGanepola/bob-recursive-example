@@ -1,7 +1,8 @@
      
 /* Have to delete the BNDDIR, or it will always be older than the source */
-/* because the CRTBNDDIR will fail the second time and only the ADDBNDDIRE is executed */     
-DLTOBJ OBJ(&O/&N) OBJTYPE(*BNDDIR)
+/* because the CRTBNDDIR will fail the second time and only the ADDBNDDIRE is executed */    
+/* The ! sign prefixing the command means to continue even if the command fails */
+!DLTOBJ OBJ(&O/&N) OBJTYPE(*BNDDIR)
 CRTBNDDIR BNDDIR(&O/&N)
 ADDBNDDIRE BNDDIR(&O/&N) +
    OBJ((*LIBL/XML *SRVPGM) (*LIBL/ORDER *SRVPGM) (*LIBL/TXT *SRVPGM) +
